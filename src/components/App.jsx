@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
 import { getImages } from './api/api';
