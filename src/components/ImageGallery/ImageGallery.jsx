@@ -13,8 +13,8 @@ export class ImageGallery extends Component {
         <>
           <ul className="ImageGallery">
             {imageList.length > 0 &&
-              imageList.map(image => {
-                const { id, webformatURL, largeImageURL, user } = image;
+              imageList.map(imag => {
+                const { id, webformatURL, largeImageURL, user } = imag;
 
                 return (
                   <ImageGalleryItem
