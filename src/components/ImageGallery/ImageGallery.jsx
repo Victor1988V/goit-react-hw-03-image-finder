@@ -13,8 +13,8 @@ export class ImageGallery extends Component {
         <>
           <ul className="ImageGallery">
             {imageList.length > 0 &&
-              imageList.map(imag => {
-                const { id, webformatURL, largeImageURL, user } = imag;
+              imageList.map(image => {
+                const { id, webformatURL, largeImageURL, user } = image;
 
                 return (
                   <ImageGalleryItem
@@ -27,7 +27,13 @@ export class ImageGallery extends Component {
               })}
           </ul>
 
-          {status === 'pending' ? <Loader /> : <Button loadMore={loadMore} />}
+          {status === 'pending' ? (
+            <Loader />
+          ) : imageList.length < 10 ? (
+            <p>There are no more pictures with this title.</p>
+          ) : (
+            <Button loadMore={loadMore} />
+          )}
         </>
       );
     }
